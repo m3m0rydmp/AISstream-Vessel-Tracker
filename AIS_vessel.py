@@ -39,16 +39,19 @@ async def connect_to_ais_stream():
             async with websockets.connect("wss://stream.aisstream.io/v0/stream") as websocket:
                 subscribe_message = {
                     "APIKey": API_KEY,
+                    # Adjust these coordinates as you wish, you can use maps for determining coordinates
+                    # You can add more bounding boxes if needed. Refer below for format.
+                    # Format: [[min_lat, min_lon], [max_lat, max_lon]] 
                     "BoundingBoxes": [
-                        [[48.155583, -2.926026], [53.684314, 10.279541]],
-                        [[51.373832, 6.060791], [50.104884, 8.665237]],
-                        [[50.001780, 8.277969], [47.614036, 7.589722]],
-                        [[42.703819, 10.587158], [41.075161, 2.103882]],
-                        [[43.416062, -8.340454], [44.936130, -0.617065]],
-                        [[46.166358, -1.210327], [48.232469, 48.232469]],
-                        [[46.814774, 1.689119], [47.003679, 8.403625]],
-                        [[47.989921, 7.207642], [48.806863, 9.228516]],
-                        [[35.0, -10.0], [60.0, 30.0]]
+                        [[48.155583, -2.926026], [53.684314, 10.279541]], # Northern Europe
+                        [[51.373832, 6.060791], [50.104884, 8.665237]], # Rhine river
+                        [[50.001780, 8.277969], [47.614036, 7.589722]], # Rhine river
+                        [[42.703819, 10.587158], [41.075161, 2.103882]], # Mediterranean
+                        [[43.416062, -8.340454], [44.936130, -0.617065]], # Bay of Biscay
+                        [[46.166358, -1.210327], [48.232469, 48.232469]], # Central Europe
+                        [[46.814774, 1.689119], [47.003679, 8.403625]], # Central Europe
+                        [[47.989921, 7.207642], [48.806863, 9.228516]], # Southern Germany
+                        [[35.0, -10.0], [60.0, 30.0]] # Europe
                     ],
                     "FilterMessageTypes": ["PositionReport", "ShipStaticData"]
                 }
