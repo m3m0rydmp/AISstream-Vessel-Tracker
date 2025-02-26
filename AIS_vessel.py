@@ -526,8 +526,18 @@ def map_updater():
 
 def signal_handler(sig, frame):
     global running
-    print("Termination requested. Confirm? (Y/N)")
+    print("Termination requested. This will stop the program from capturing data. Confirm? (Y/N)")
     if input().strip().lower() == "y":
+        print(r'''
+
+██████  ██    ██ ███████     ██████  ██    ██ ███████          
+██   ██  ██  ██  ██          ██   ██  ██  ██  ██               
+██████    ████   █████       ██████    ████   █████            
+██   ██    ██    ██          ██   ██    ██    ██               
+██████     ██    ███████     ██████     ██    ███████ ██ ██ ██  
+                                                                                                                     
+PLEASE DON'T PRESS ANY BUTTON, IT WILL STILL UPDATE BUT IT WILL CLOSE AFTER
+        ''')
         print("Shutting down...")
         running = False
         try:
