@@ -12,7 +12,6 @@ This project allows you to track your favorite vessel that is available on the a
 You can have this by cloning this project by simply doing:
 
 ```bash
-# Example command
 git clone https://github.com/m3m0rydmp/AISstream-Vessel-Tracker.git
 ```
 Or by downloading it as a zip file.
